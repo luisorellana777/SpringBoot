@@ -4,6 +4,7 @@ import javax.ws.rs.Produces;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,6 +37,13 @@ public class CourseControler {
 	public String getAllCourses()
 	{
 		return this.courseService.getAllCourses();
+	}
+	
+	@GetMapping(path="/")
+	@ApiOperation(value = "Get A Course")
+	public ResponseEntity<?> getCourse(String code)
+	{
+		return this.courseService.getCourse(code);
 	}
 	
 }

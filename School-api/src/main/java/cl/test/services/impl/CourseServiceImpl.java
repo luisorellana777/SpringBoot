@@ -2,9 +2,11 @@ package cl.test.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -59,5 +61,35 @@ public class CourseServiceImpl extends CourseService{
 		}
 	}
 	
-    
+	private Course getCourseEntity(String code){
+		
+		try {
+			
+			Optional<Course> rowOption= courseRepository.findById(code);
+			
+			if (rowOption.isPresent()){
+				Course course = rowOption.get();
+				return course;
+			}else {
+				return null;
+			}
+			
+		
+		}catch(IndexOutOfBoundsException ex){//if not got any
+			return null;
+		}
+	}
+	
+	@Override
+	public ResponseEntity<?> getCourse(String code) {
+
+		try {
+			
+			Course course = this.getCourseEntity(code);
+			return course == null ? new ResponseEntity<>(null, HttpStatus.NOT_FOUND) : new ResponseEntity<>(course, HttpStatus.ACCEPTED);
+		
+		}catch(IndexOutOfBoundsException ex){//if not got any
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		}
+	}
 }

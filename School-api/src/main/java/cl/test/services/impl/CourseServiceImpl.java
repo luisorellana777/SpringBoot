@@ -108,4 +108,20 @@ public class CourseServiceImpl extends CourseService{
 			return HttpStatus.BAD_GATEWAY;
 		}
 	}
+	
+	@Override
+	public HttpStatus updateCourse(String code, Course course) {
+		
+		try {
+
+			Course recoveredCourse = this.getCourseEntity(code);
+			super.prepareUpdateCourse(course, recoveredCourse);
+			
+			courseRepository.save(recoveredCourse);
+			return HttpStatus.OK;
+		
+		}catch(Exception ex){//if not got any
+			return HttpStatus.NOT_FOUND;
+		}
+	}
 }

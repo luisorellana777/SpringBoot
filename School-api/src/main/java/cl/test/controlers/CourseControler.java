@@ -62,4 +62,10 @@ public class CourseControler {
 		return this.courseService.updateCourse(code, course);
 	}
 	
+	@GetMapping(path="/pagination")
+	@ApiOperation(value = "Get paginated Courses. Order By Code")
+	public ResponseEntity<?> getPaginationCourses(int page, int size)
+	{
+		return this.courseService.paginationCourses(page, size);
+	}
 }

@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -122,6 +125,27 @@ public class CourseServiceImpl extends CourseService{
 		
 		}catch(Exception ex){//if not got any
 			return HttpStatus.NOT_FOUND;
+		}
+	}
+	
+	@Override
+	public ResponseEntity<?> paginationCourses(int page, int size) {
+		
+		if(!validationService.isValidPagination(size) || !validationService.isValidPagination(page)) {
+			return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+		}
+		
+		try {
+			
+			Pageable firstPageWithTwoElements = PageRequest.of(page, size);
+			Page<Course> allCourses = courseRepository.findAll(firstPageWithTwoElements);
+
+			List<Course> courseList = allCourses.getContent();
+
+			return new ResponseEntity<>(courseList, HttpStatus.ACCEPTED);
+
+		}catch(Exception ex){
+			return new ResponseEntity<>(null, HttpStatus.BAD_GATEWAY);
 		}
 	}
 }

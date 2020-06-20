@@ -16,6 +16,7 @@ public abstract class CourseService {
 	abstract public ResponseEntity<?> getCourse(String code);
 	abstract public HttpStatus deleteCourse(String code);
 	abstract public HttpStatus updateCourse(String code, Course course);
+	abstract public ResponseEntity<?> paginationCourses(int page, int size);
 	
 	protected void prepareUpdateCourse(Course courseFrom, Course courseTo) {
 		

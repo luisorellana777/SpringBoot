@@ -15,4 +15,5 @@ limitations under the License.
     <threadsafe>true</threadsafe>
     <runtime>java8</runtime>
     <service>school-api</service>
+    <sessions-enabled>true</sessions-enabled>
 </appengine-web-app>

@@ -1,0 +1,230 @@
+{
+	"variables": [],
+	"info": {
+		"name": "School",
+		"_postman_id": "708d52e5-20c3-0a25-be08-4fdcbb6f9d77",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Course",
+			"request": {
+				"url": "https://school-api-dot-school-272623.appspot.com/courses/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzY2hvb2wiLCJleHAiOjE1OTI3MTAzMjAsImlhdCI6MTU5MjY5MjMyMH0.oqfNXOeSp2Tdz2R0KNiCaYnXyKI7O7bswALobp0-Pgert2IpCLQeADIbFE8SGC22mgsL59UVj1LM5zlG1w4_zw",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"code\": \"c-1\",\r\n\t\"name\": \"primero c\",\r\n\t\"student\": [{\r\n\t\t\"id\": 1,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 21\r\n\t},\r\n\t{\r\n\t\t\"id\": 2,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 22\r\n\t},\r\n\t{\r\n\t\t\"id\": 3,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 23\r\n\t},\r\n\t{\r\n\t\t\"id\": 4,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 24\r\n\t},\r\n\t{\r\n\t\t\"id\": 5,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 25\r\n\t},\r\n\t{\r\n\t\t\"id\": 6,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 26\r\n\t},\r\n\t{\r\n\t\t\"id\": 7,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 27\r\n\t}]\r\n}"
+				},
+				"description": "Create Course"
+			},
+			"response": []
+		},
+		{
+			"name": "Get A Course",
+			"request": {
+				"url": {
+					"raw": "https://school-api-dot-school-272623.appspot.com/courses/?code=c-1",
+					"protocol": "https",
+					"host": [
+						"school-api-dot-school-272623",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"courses",
+						""
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "c-1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzY2hvb2wiLCJleHAiOjE1OTI3MTA0NzgsImlhdCI6MTU5MjY5MjQ3OH0.WZRuwQuw-YzT8xLEOj_tyow87vVDUUDUOeSohVW-k-MmbiRoaD4Gc4pOW8UVrQXljgM-WXnZGjlQL2DH8q81wg",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get A Course"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete A Course",
+			"request": {
+				"url": {
+					"raw": "https://school-api-dot-school-272623.appspot.com/courses/?code=c-1",
+					"protocol": "https",
+					"host": [
+						"school-api-dot-school-272623",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"courses",
+						""
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "c-1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzY2hvb2wiLCJleHAiOjE1OTI3MTA0NzgsImlhdCI6MTU5MjY5MjQ3OH0.WZRuwQuw-YzT8xLEOj_tyow87vVDUUDUOeSohVW-k-MmbiRoaD4Gc4pOW8UVrQXljgM-WXnZGjlQL2DH8q81wg",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Delete A Course"
+			},
+			"response": []
+		},
+		{
+			"name": "Get paginated Courses. Order By Code",
+			"request": {
+				"url": {
+					"raw": "https://school-api-dot-school-272623.appspot.com/courses/pagination?page=0&size=3",
+					"protocol": "https",
+					"host": [
+						"school-api-dot-school-272623",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"courses",
+						"pagination"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "size",
+							"value": "3",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzY2hvb2wiLCJleHAiOjE1OTI3MTA0NzgsImlhdCI6MTU5MjY5MjQ3OH0.WZRuwQuw-YzT8xLEOj_tyow87vVDUUDUOeSohVW-k-MmbiRoaD4Gc4pOW8UVrQXljgM-WXnZGjlQL2DH8q81wg",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get paginated Courses. Order By Code"
+			},
+			"response": []
+		},
+		{
+			"name": "Put A Course",
+			"request": {
+				"url": {
+					"raw": "https://school-api-dot-school-272623.appspot.com/courses/?code=c-1",
+					"protocol": "https",
+					"host": [
+						"school-api-dot-school-272623",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"courses",
+						""
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "c-1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzY2hvb2wiLCJleHAiOjE1OTI3MTA0NzgsImlhdCI6MTU5MjY5MjQ3OH0.WZRuwQuw-YzT8xLEOj_tyow87vVDUUDUOeSohVW-k-MmbiRoaD4Gc4pOW8UVrQXljgM-WXnZGjlQL2DH8q81wg",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"code\": \"c-1\",\r\n\t\"name\": \"primero c\",\r\n\t\"student\": [{\r\n\t\t\"id\": 1,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 21\r\n\t},\r\n\t{\r\n\t\t\"id\": 2,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 22\r\n\t},\r\n\t{\r\n\t\t\"id\": 3,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 23\r\n\t},\r\n\t{\r\n\t\t\"id\": 4,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 24\r\n\t},\r\n\t{\r\n\t\t\"id\": 5,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 25\r\n\t},\r\n\t{\r\n\t\t\"id\": 6,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 26\r\n\t},\r\n\t{\r\n\t\t\"id\": 7,\r\n\t\t\"rut\": \"167376517\",\r\n\t\t\"name\": \"luis\",\r\n\t\t\"lastName\": \"orellana\",\r\n\t\t\"age\": 29\r\n\t}]\r\n}"
+				},
+				"description": "Put A Course"
+			},
+			"response": []
+		},
+		{
+			"name": "Token",
+			"request": {
+				"url": "https://school-api-dot-school-272623.appspot.com/token",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Courses",
+			"request": {
+				"url": "https://school-api-dot-school-272623.appspot.com/courses/all",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzY2hvb2wiLCJleHAiOjE1OTI3MTAzMjAsImlhdCI6MTU5MjY5MjMyMH0.oqfNXOeSp2Tdz2R0KNiCaYnXyKI7O7bswALobp0-Pgert2IpCLQeADIbFE8SGC22mgsL59UVj1LM5zlG1w4_zw",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get All Courses"
+			},
+			"response": []
+		}
+	]
+}

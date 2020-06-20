@@ -10,4 +10,5 @@ public abstract class CourseService {
 	abstract public HttpStatus createCourses(Course course);
 	abstract public String getAllCourses();
 	abstract public ResponseEntity<?> getCourse(String code);
+	abstract public HttpStatus deleteCourse(String code);
 }

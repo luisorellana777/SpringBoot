@@ -92,4 +92,20 @@ public class CourseServiceImpl extends CourseService{
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 		}
 	}
+	
+	@Override
+	public HttpStatus deleteCourse(String code) {
+
+		try {
+			
+			Course course = this.getCourseEntity(code);
+			studentRepository.deleteByCode(course.getCode());
+			courseRepository.deleteByCode(course.getCode());
+
+			return HttpStatus.OK;
+		
+		}catch(Exception ex){//if not got any
+			return HttpStatus.BAD_GATEWAY;
+		}
+	}
 }

@@ -44,6 +44,19 @@ public class CourseServiceImpl extends CourseService{
 
 	}
 
+	@Override
+	public String getAllCourses() {
+		try {
 
+			List<Course> rows = (ArrayList<Course>) courseRepository.findAll();
+			ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+			String json = ow.writeValueAsString(rows);
+			return json;
+
+		}catch(Exception ex){
+			return ex.getMessage();
+		}
+	}
+	
     
 }
